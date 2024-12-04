@@ -90,6 +90,7 @@ jreleaser {
         active = 'ALWAYS'
         armored = true
         mode = 'FILE'
+        passphrase = ""
         print ""
     }
     deploy {
