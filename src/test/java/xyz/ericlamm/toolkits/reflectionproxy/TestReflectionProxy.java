@@ -1,4 +1,4 @@
-package com.ericlam.me.reflectionproxy;
+package xyz.ericlamm.toolkits.reflectionproxy;
 
 import org.junit.jupiter.api.Test;
 

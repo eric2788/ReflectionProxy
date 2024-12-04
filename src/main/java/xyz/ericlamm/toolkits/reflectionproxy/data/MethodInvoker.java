@@ -1,4 +1,4 @@
-package com.ericlam.me.reflectionproxy.data;
+package xyz.ericlamm.toolkits.reflectionproxy.data;
 
 import java.lang.reflect.Method;
 

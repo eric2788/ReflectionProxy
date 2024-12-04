@@ -1,8 +1,8 @@
-package com.ericlam.me.reflectionproxy;
+package xyz.ericlamm.toolkits.reflectionproxy;
 
-import com.ericlam.me.reflectionproxy.annotations.Declared;
-import com.ericlam.me.reflectionproxy.annotations.Field;
-import com.ericlam.me.reflectionproxy.annotations.ForClass;
+import xyz.ericlamm.toolkits.reflectionproxy.annotations.Declared;
+import xyz.ericlamm.toolkits.reflectionproxy.annotations.Field;
+import xyz.ericlamm.toolkits.reflectionproxy.annotations.ForClass;
 
 @ForClass("com.ericlam.me.reflectionproxy.SecretManager")
 public interface HackedSecretManager {

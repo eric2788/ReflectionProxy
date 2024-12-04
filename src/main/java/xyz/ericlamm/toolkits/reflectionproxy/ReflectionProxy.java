@@ -1,4 +1,4 @@
-package com.ericlam.me.reflectionproxy;
+package xyz.ericlamm.toolkits.reflectionproxy;
 
 import java.util.HashSet;
 import java.util.Set;

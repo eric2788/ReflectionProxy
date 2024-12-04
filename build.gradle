@@ -1,10 +1,16 @@
 plugins {
     id 'java'
     id 'maven-publish'
+    id 'org.jreleaser' version '1.15.0'
 }
 
-group = 'com.ericlam.me'
+group = 'xyz.ericlamm.toolkits'
 version = '0.0.1'
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
 
 repositories {
     mavenCentral()
@@ -22,14 +28,6 @@ test {
 publishing {
     repositories {
         maven {
-            name = "OSSRH"
-            url = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
-            credentials {
-                username = System.getenv("MAVEN_USERNAME")
-                password = System.getenv("MAVEN_PASSWORD")
-            }
-        }
-        maven {
             name = "GitHubPackages"
             url = "https://maven.pkg.github.com/eric2788/reflectionproxy"
             credentials {
@@ -37,5 +35,65 @@ publishing {
                 password = System.getenv("GITHUB_TOKEN")
             }
         }
+        maven {
+            name = "localStaging"
+            url = layout.buildDirectory.dir('staging-deploy')
+        }
     }
+
+    publications {
+        mavenJava(MavenPublication) {
+
+            groupId = 'xyz.ericlamm.toolkits'
+            artifactId = 'reflection-proxy'
+
+            from components.java
+
+            pom {
+                name = 'reflection-proxy'
+                description = 'using java reflection elegantly via proxy'
+                url = 'https://github.com/eric2788/reflectionproxy'
+                inceptionYear = '2024'
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'http://www.opensource.org/licenses/mit-license.php'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'eric2788'
+                        name = 'Eric Lam'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:https://github.com/eric2788/ReflectionProxy.git'
+                    developerConnection = 'scm:git:ssh://github.com/eric2788/ReflectionProxy.git'
+                    url = 'http://github.com/eric2788/ReflectionProxy'
+                }
+            }
+        }
+    }
+}
+
+jreleaser {
+    signing {
+        active = 'ALWAYS'
+        armored = true
+        mode = 'FILE'
+        print ""
+    }
+    deploy {
+        maven {
+            mavenCentral {
+                sonatype {
+                    active = 'ALWAYS'
+                    url = 'https://central.sonatype.com/api/v1/publisher'
+                    stagingRepository('build/staging-deploy')
+                }
+                print ""
+            }
+        }
+    }
+
 }

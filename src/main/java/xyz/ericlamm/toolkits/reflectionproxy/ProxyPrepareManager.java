@@ -1,15 +1,15 @@
-package com.ericlam.me.reflectionproxy;
+package xyz.ericlamm.toolkits.reflectionproxy;
 
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.ericlam.me.reflectionproxy.annotations.Declared;
-import com.ericlam.me.reflectionproxy.annotations.Field;
-import com.ericlam.me.reflectionproxy.annotations.ForClass;
-import com.ericlam.me.reflectionproxy.data.FieldInvoker;
-import com.ericlam.me.reflectionproxy.data.MethodInvoker;
-import com.ericlam.me.reflectionproxy.data.PreparedProxy;
+import xyz.ericlamm.toolkits.reflectionproxy.annotations.Declared;
+import xyz.ericlamm.toolkits.reflectionproxy.annotations.Field;
+import xyz.ericlamm.toolkits.reflectionproxy.annotations.ForClass;
+import xyz.ericlamm.toolkits.reflectionproxy.data.FieldInvoker;
+import xyz.ericlamm.toolkits.reflectionproxy.data.MethodInvoker;
+import xyz.ericlamm.toolkits.reflectionproxy.data.PreparedProxy;
 
 public final class ProxyPrepareManager implements ProxyPrepareService {
 

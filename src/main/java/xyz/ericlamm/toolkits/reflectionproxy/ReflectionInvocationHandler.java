@@ -1,14 +1,14 @@
-package com.ericlam.me.reflectionproxy;
+package xyz.ericlamm.toolkits.reflectionproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-import com.ericlam.me.reflectionproxy.annotations.Field;
-import com.ericlam.me.reflectionproxy.annotations.ForClass;
-import com.ericlam.me.reflectionproxy.data.FieldInvoker;
-import com.ericlam.me.reflectionproxy.data.MethodInvoker;
-import com.ericlam.me.reflectionproxy.data.ProxyObject;
+import xyz.ericlamm.toolkits.reflectionproxy.annotations.Field;
+import xyz.ericlamm.toolkits.reflectionproxy.annotations.ForClass;
+import xyz.ericlamm.toolkits.reflectionproxy.data.FieldInvoker;
+import xyz.ericlamm.toolkits.reflectionproxy.data.MethodInvoker;
+import xyz.ericlamm.toolkits.reflectionproxy.data.ProxyObject;
 
 /* (from CHATGPT)
 	Highest performance cost: getDeclaredField, getDeclaredMethod, getMethod, getField

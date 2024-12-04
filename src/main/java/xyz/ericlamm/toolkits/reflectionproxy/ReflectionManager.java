@@ -1,8 +1,8 @@
-package com.ericlam.me.reflectionproxy;
+package xyz.ericlamm.toolkits.reflectionproxy;
 
 import java.lang.reflect.Proxy;
 
-import com.ericlam.me.reflectionproxy.data.ProxyObject;
+import xyz.ericlamm.toolkits.reflectionproxy.data.ProxyObject;
 
 public final class ReflectionManager implements ReflectionService {
 
