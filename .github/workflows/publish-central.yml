@@ -1,13 +1,4 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# GitHub recommends pinning actions to a commit SHA.
-# To get a newer version, you will need to update the SHA.
-# You can also reference a tag or branch, but the action may change without warning.
-
-name: Publish package to the Maven Central Repository and GitHub Packages
+name: Publish package to the Maven Central Repository
 on:
   workflow_dispatch:
 
@@ -27,7 +18,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
       - name: Publish packages
-        run: chmod +x ./gradlew && ./gradlew publish && ./gradlew jreleaserFullRelease
+        run: chmod +x ./gradlew && ./gradlew publishAllPublicationsToLocalStagingRepository && ./gradlew jreleaserFullRelease
         env:
           JRELEASER_GPG_PUBLIC_KEY: ${{ secrets.SIGNING_PUBLIC_KEY }}
           JRELEASER_GPG_SECRET_KEY: ${{ secrets.SIGNING_SECRET_KEY }}
