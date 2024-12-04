@@ -12,15 +12,6 @@ java {
     withSourcesJar()
 }
 
-javadoc {
-    source = sourceSets.main.allJava
-                .findAll {
-                    it.name.replace(".java", "").endsWith("Service") ||
-                    it.name.replace(".java", "").endsWith("Utils") ||
-                    it.name.replace(".java", "") == "ReflectionProxy"
-                }
-}
-
 repositories {
     mavenCentral()
 }
@@ -89,7 +80,7 @@ jreleaser {
     signing {
         active = 'ALWAYS'
         armored = true
-        mode = 'FILE'
+        mode = System.getenv("CI") ? 'MEMORY' : 'FILE'
         passphrase = ""
         print ""
     }
