@@ -26,8 +26,8 @@ jobs:
           distribution: 'adopt'
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
-      - name: Publish package
-        run: chmod +x ./gradlew && ./gradlew publish
+      - name: Publish packages
+        run: chmod +x ./gradlew && ./gradlew publish && ./gradlew jreleaserFullRelease
         env:
           JRELEASER_GPG_PUBLIC_KEY: ${{ secrets.SIGNING_PUBLIC_KEY }}
           JRELEASER_GPG_SECRET_KEY: ${{ secrets.SIGNING_SECRET_KEY }}
