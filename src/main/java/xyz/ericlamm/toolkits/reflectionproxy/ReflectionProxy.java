@@ -82,11 +82,11 @@ public final class ReflectionProxy {
         }
 
         /**
-         * Builds a new {@link ReflectionManager} with the configured settings.
+         * Builds a new {@link ReflectionService} with the configured settings.
          *
-         * @return a new {@link ReflectionManager} instance
+         * @return a new {@link ReflectionService} instance
          */
-        public ReflectionManager build() {
+        public ReflectionService build() {
             proxies.forEach(proxy -> {
                 try {
                     prepareManager.prepareFor(proxy);
