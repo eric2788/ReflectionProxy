@@ -40,12 +40,12 @@ Create a fake inteface for the class:
 public interface SecretManagerProxy {
 	
 	@Declared // declare that this is a declared field
-    	@Field // declare that this is a field
-    	String getSecret();
+	@Field // declare that this is a field
+	String getSecret();
 	
 	@Declared // declare that this is a declared field
 	@Field // declare that this is a field
-    	void setSecret(String secret);
+	void setSecret(String secret);
 
 }
 ```
@@ -59,7 +59,7 @@ public static void main(String[] args) {
 			.prepare(SecretManagerProxy.class)
 			.build();
 	
-	var ins = SecretManagerProxy.getInstance();
+	var ins = SecretManager.getInstance();
     	var secretManager = proxy.createProxyForInstance(SecretManagerProxy.class, ins);
 	System.out.println("before");
 	ins.printSecret();
